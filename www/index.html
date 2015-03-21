@@ -7,26 +7,27 @@
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="dist/setup.js"></script>
     <script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="bower_components/Chart.js/Chart.min.js"></script>
     <link rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile.structure-1.4.5.min.css" />
     <script src="dist/main.js"></script>
 </head>
 <body>
-	<nav data-role="panel" id="menu" data-display="push">
-		<ul data-role="listview">
-			<li><a href="#home">Accueil</a></li>
-			<li><a href="#">Dépistage</a></li>
-			<li><a href="#evaluation">Evaluation</a></li>
-			<li><a href="#">Suivi</a></li>
-			<li><a href="#">Exercices</a></li>
-			<li><a href="#">Profil</a></li>
-			<li><a href="#">À propos</a></li>
-		</ul>
-	</nav>
 	<div data-role="page" id="home">
 		<div data-role="header">
 			<a data-role="button" href="#menu">Menu</a>
 			<h1>Cognitio</h1>
 		</div>
+	</div>
+	<div data-role="page" id="menu">
+		<ul data-role="listview">
+			<li><a href="#home">Accueil</a></li>
+			<li><a href="#">Dépistage</a></li>
+			<li><a href="#evaluation">Evaluation</a></li>
+			<li><a href="#stats">Suivi</a></li>
+			<li><a href="#">Exercices</a></li>
+			<li><a href="#">Profil</a></li>
+			<li><a href="#">À propos</a></li>
+		</ul>
 	</div>
 	<div data-role="page" id="evaluation">
 		<div data-role="header">
@@ -66,6 +67,15 @@
 		<div data-role="footer" id="test_mms_footer">
 			<a data-role="button" id="test_mms_next">Question suivante</a>
 			Question <span id="test_mms_curquestion"></span> / <span id="test_mms_nbquestions"></span>
+		</div>
+	</div>
+	<div data-role="page" id="stats">
+		<div data-role="header">
+			<a data-role="button" href="#menu">Menu</a>
+			<h1>Cognitio - Suivi</h1>
+		</div>
+		<div data-role="content">
+			<canvas id="chart_mms" width="400" height="400"></canvas>
 		</div>
 	</div>
 </body>
