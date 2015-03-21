@@ -1,0 +1,29 @@
+@mixin  rotate($deg) {
+    -webkit-transform: rotate($deg); /* Chrome < 36 & Safari & iOS Safari support */
+        -ms-transform: rotate($deg); /* MSIE9 support */
+            transform: rotate($deg);
+}
+
+@mixin  scale($deg) {
+    -webkit-transform: scale($deg); /* Chrome < 36 & Safari & iOS Safari support */
+        -ms-transform: scale($deg); /* MSIE9 support */
+            transform: scale($deg);
+}
+
+@mixin  miroir() {
+    -webkit-transform: scaleX(-1); /* Chrome < 36 & Safari & iOS Safari support */
+        -ms-transform: scaleX(-1); /* MSIE9 support */
+            transform: scaleX(-1);
+}
+
+@mixin  animation($attr) {
+    -webkit-animation: $attr; /* Chrome & Android Browser & Safari & iOS Safari & Opera support */
+            animation: $attr;
+}
+
+@mixin  gradient($from, $to) {
+    /* Fallback */
+    background-color: $to;
+    /* Standard syntax */
+    background-image: linear-gradient($from, $to);
+}

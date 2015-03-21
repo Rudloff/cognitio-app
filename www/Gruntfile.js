@@ -18,10 +18,34 @@ module.exports = function (grunt) {
                     }
                 }
             },
+            sass: {
+                dev: {
+                    options: {
+                        style: 'expanded',
+                        compass: false
+                    },
+                    files: {
+                        'dist/main.css': ['scss/main.scss']
+                    }
+                },
+                dist: {
+                    options: {
+                        style: 'compressed',
+                        compass: false
+                    },
+                    files: {
+                        'dist/main.css': ['scss/main.scss']
+                    }
+                }
+            },
             watch: {
                 scripts: {
                     files: ['js/*.js'],
                     tasks: ['uglify']
+                },
+                sass: {
+                    files: 'scss/*.scss',
+                    tasks: ['sass:dev']
                 }
             },
             jslint: {
@@ -36,9 +60,10 @@ module.exports = function (grunt) {
     );
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jslint');
 
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['uglify', 'sass']);
     grunt.registerTask('lint', ['jslint']);
 };
