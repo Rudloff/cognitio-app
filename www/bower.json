@@ -1,6 +1,7 @@
 {
     "name": "cognitio-app",
     "dependencies": {
-        "jquery-mobile-bower": "~1.4.5"
+        "jquery-mobile-bower": "~1.4.5",
+        "jquery": "~1.10.0"
     }
 }
