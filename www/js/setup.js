@@ -13,3 +13,9 @@ $(document).on(
         );
     }
 );
+localforage.config(
+    {
+        name: 'cognitio',
+        storeName: 'results'
+    }
+);

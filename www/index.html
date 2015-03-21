@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Cognitio</title>
+    <script src="bower_components/localforage/dist/localforage.nopromises.min.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="dist/setup.js"></script>
     <script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
@@ -55,6 +56,10 @@
 			<div id="test_mms_intro">
 				<h2 id="test_mms_intro_title"></h2>
 				<p id="test_mms_intro_text"></p>
+			</div>
+			<div id="test_mms_results">
+				<h2>Résultats</h2>
+				<p><span id="test_mms_results_score"></span></p>
 			</div>
 			<a data-role="button" id="test_mms_start">Démarrer le test</a>
 		</div>

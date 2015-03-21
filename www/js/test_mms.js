@@ -1,4 +1,4 @@
-/*global $*/
+/*global $, localforage*/
 /*jslint browser: true, unparam: true*/
 var test_mms = (function () {
     'use strict';
@@ -44,7 +44,12 @@ var test_mms = (function () {
             },
             {
                 title: "Apprentissage",
-                description: ""
+                description: "",
+                questions: [
+                    {
+                        title: "Test"
+                    }
+                ]
             }
         ],
         nbQuestions = 0,
@@ -52,7 +57,6 @@ var test_mms = (function () {
     function showQuestion(question, subQuestion) {
         curQuestion = question;
         curSubQuestion = subQuestion;
-        console.log(question, subQuestion);
         if (subQuestion === 0) {
             $('#test_mms_intro_title').text(questions[question].title);
             $('#test_mms_question').hide();
@@ -65,12 +69,31 @@ var test_mms = (function () {
         $('#test_mms_curquestion').text(curNbQuestion);
     }
     function nextQuestion() {
-        var nextSubQuestion = curSubQuestion + 1;
-        if (questions[curQuestion].questions[nextSubQuestion - 1]) {
-            showQuestion(curQuestion, nextSubQuestion);
-            curNbQuestion += 1;
+        var nextSubQuestion = curSubQuestion + 1,
+            $text_mms_check = $('#text_mms_check');
+        if (questions[curQuestion + 1]) {
+            if (questions[curQuestion].questions[nextSubQuestion - 1]) {
+                showQuestion(curQuestion, nextSubQuestion);
+                curNbQuestion += 1;
+                if ($text_mms_check.prop('checked')) {
+                    score += 1;
+                    $text_mms_check.prop('checked', false);
+                }
+            } else {
+                showQuestion(curQuestion + 1, 0);
+            }
         } else {
-            showQuestion(curQuestion + 1, 0);
+            $('#test_mms_question, #test_mms_intro, #test_mms_footer').hide();
+            $('#test_mms_results').show();
+            $('#test_mms_results_score').text(score + ' / ' + nbQuestions);
+            localforage.setItem(Date.now().toString(), {
+               test: 'mms',
+               score: score 
+            });
+            console.log(Date.now().toString(), {
+               test: 'mms',
+               score: score 
+            });
         }
     }
     function startTest() {
@@ -82,7 +105,7 @@ var test_mms = (function () {
         init: function () {
             $('#test_mms_start').click(startTest);
             $('#test_mms_next').click(nextQuestion);
-            $('#test_mms_question, #test_mms_footer').hide();
+            $('#test_mms_question, #test_mms_footer, #test_mms_results').hide();
             $(questions).each(function (i, question) {
                 $(question.questions).each(function (i, subQuestion) {
                     nbQuestions += 1;
