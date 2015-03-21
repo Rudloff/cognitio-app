@@ -17,11 +17,28 @@ module.exports = function (grunt) {
                         'dist/setup.js': ['js/setup.js']
                     }
                 }
+            },
+            watch: {
+                scripts: {
+                    files: ['js/*.js'],
+                    tasks: ['uglify']
+                }
+            },
+            jslint: {
+                js: {
+                    src: ['js/*.js']
+                },
+                Gruntfile: {
+                    src: ['Gruntfile.js']
+                }
             }
         }
     );
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-jslint');
 
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('lint', ['jslint']);
 };
