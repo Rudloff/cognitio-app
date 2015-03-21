@@ -3,6 +3,7 @@
     "dependencies": {
         "jquery-mobile-bower": "~1.4.5",
         "jquery": "~1.10.0",
-        "localforage": "~1.2.2"
+        "localforage": "~1.2.2",
+        "Chart.js": "~1.0.2"
     }
 }
