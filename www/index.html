@@ -4,10 +4,64 @@
     <meta charset="UTF-8" />
     <title>Cognitio</title>
     <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="dist/setup.js"></script>
     <script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="dist/main.js"></script>
 </head>
 <body>
-
+	<nav data-role="panel" id="menu" data-display="push">
+		<ul data-role="listview">
+			<li><a href="#home">Accueil</a></li>
+			<li><a href="#">Dépistage</a></li>
+			<li><a href="#evaluation">Evaluation</a></li>
+			<li><a href="#">Suivi</a></li>
+			<li><a href="#">Exercices</a></li>
+			<li><a href="#">Profil</a></li>
+			<li><a href="#">À propos</a></li>
+		</ul>
+	</nav>
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<a data-role="button" href="#menu">Menu</a>
+			<h1>Cognitio</h1>
+		</div>
+	</div>
+	<div data-role="page" id="evaluation">
+		<div data-role="header">
+			<a data-role="button" href="#menu">Menu</a>
+			<h1>Cognitio - Évaluation</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#test_mms">MMSE</a></li>
+				<li><a href="#test_clock">Test de l'horloge</a></li>
+				<li><a href="#test_dubois">5 mots de Dubois</a></li>
+				<li><a href="#test_lawton">Échelle de Lawton</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="page" id="test_mms">
+		<div data-role="header">
+			<a data-role="button" href="#menu">Menu</a>
+			<h1>Cognitio - Évaluation</h1>
+		</div>
+		<div data-role="content">
+			<div id="test_mms_question">
+				<h2 id="test_mms_question_title"></h2>
+				<p id="test_mms_question_text"></p>
+				<label for="text_mms_check">Réponse correcte</label><input id="text_mms_check" type="checkbox" />
+			</div>
+			<div id="test_mms_intro">
+				<h2 id="test_mms_intro_title"></h2>
+				<p id="test_mms_intro_text"></p>
+			</div>
+			<a data-role="button" id="test_mms_start">Démarrer le test</a>
+		</div>
+		<div data-role="footer" id="test_mms_footer">
+			<a data-role="button" id="test_mms_next">Question suivante</a>
+			Question <span id="test_mms_curquestion"></span> / <span id="test_mms_nbquestions"></span>
+		</div>
+	</div>
 </body>
 </html>
