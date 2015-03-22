@@ -62,25 +62,30 @@ var test_mms = (function () {
             $('#test_mms_intro_title').text(questions[question].title);
             if (questions[question].description) {
                 $('#test_mms_intro_text').text(questions[question].description);
+            } else {
+                $('#test_mms_question_text').empty();
             }
             $('#test_mms_question').hide();
             $('#test_mms_intro').show();
         } else {
             if (questions[question].questions[subQuestion - 1].description) {
                 $('#test_mms_question_text').text(questions[question].questions[subQuestion - 1].description);
+            } else {
+                $('#test_mms_question_text').empty();
             }
             $('#test_mms_question_title').text(questions[question].questions[subQuestion - 1].title);
             $('#test_mms_question').show();
             $('#test_mms_intro').hide();
         }
-        $('#test_mms_curquestion').text(curNbQuestion);
     }
     function nextQuestion() {
         var nextSubQuestion = curSubQuestion + 1,
             $text_mms_check = $('#text_mms_check');
-        if (questions[curQuestion + 1]) {
+        if (questions[curQuestion].questions[nextSubQuestion - 1] || questions[curQuestion + 1]) {
             if (questions[curQuestion].questions[nextSubQuestion - 1]) {
                 showQuestion(curQuestion, nextSubQuestion);
+                $('#test_mms_progress').css('width', ((curNbQuestion / nbQuestions) * 100) + '%');
+                $('#test_mms_curquestion').text(curNbQuestion);
                 curNbQuestion += 1;
                 if ($text_mms_check.prop('checked')) {
                     score += 1;
