@@ -23,19 +23,21 @@
     vertical-align: top;
     width:33%;
 
-    background-color:$green;
-
     border-right: 3px solid red;
 
     .app-home-diag{
-      position: relative;
+      position: relative; top: 25%;
       padding-bottom: 70px;
+      height:200px;
+      line-height:200px;
+      border: 1px solid red;
+
 
       &::before{
+        position: absolute; top:30px;
+        display: block;
         width: 50px;
         height:50px;
-        display: block;
-        position: absolute; height: 50px; top:30px;
         background-color: $blue;
         border-radius:50%;
         content:" ";
@@ -43,7 +45,7 @@
       }
 
       &::after{
-        display: block;
+        display: block; top: 30px;
         position: absolute;
         content:"\e8dc";
         font-family: $icofont;
@@ -60,13 +62,12 @@
     font-size:$size;
     vertical-align: top;
 
-    background-color:$red;
-
     margin-left:auto;
     margin-right:auto;
 
     .app-home-test{
       width:100%;
+      top: 25%;
       display: block;
       font-size:0;
       vertical-align: top;
@@ -165,7 +166,8 @@
 
 .app-home-footer{
   width:100%;
-  position:fixed; left:0px; bottom:0px; height: 85px;
+  position:fixed; left:0px; bottom:0px;
+  height: 85px;
   margin-height: 85px;
   background-color:$grey;
   button{
