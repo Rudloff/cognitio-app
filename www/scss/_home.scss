@@ -12,7 +12,7 @@
     font-size: 0;
     height: 100%;
     width: 100%;
-    
+
     .app-home-left {
         display: inline-block;
         font-size: $size;
@@ -20,13 +20,13 @@
         position: relative;
         vertical-align: top;
         width: 33.333%;
-        
+
         .app-home-diag {
             position: absolute; top: calc(50% - 118px);
             padding-top: 185px;
             text-align: center;
             width: 100%;
-            
+
             &::before {
                 position: absolute; top: 10px; left: calc(50% - 75px);
                 display: block;
@@ -37,12 +37,12 @@
                 height: 150px;
                 width: 150px;
             }
-            
+
             &::after {
                 position: absolute; top: 10px; left: calc(50% - 75px);
                 display: block;
                 color: $white;
-                content: '\e8dc';
+                content: '\e884';
                 font-family: $icofont;
                 font-size: 75px;
                 padding: 0;
@@ -51,7 +51,7 @@
                 text-align: center;
                 width: 150px;
             }
-            
+
             strong {
                 color: $darkGrey;
                 font-size: 24px;
@@ -66,14 +66,14 @@
         font-size: 0;
         height: 100%;
         width: 66.666%;
-        
+
         .app-home-test {
             position: relative;
             display: inline-block;
             font-size: $size;
             height: 50%;
             width: 50%;
-            
+
             strong {
                 position: absolute; top: calc(50% - 110px);
                 display: block;
@@ -84,7 +84,7 @@
                 padding-top: 185px;
                 text-align: center;
                 width: 100%;
-                
+
                 &::before {
                     position: absolute; top: 10px; left: calc(50% - 75px);
                     display: block;
@@ -95,7 +95,7 @@
                     height: 150px;
                     width: 150px;
                 }
-                
+
                 &::after {
                     position: absolute; top: 10px; left: calc(50% - 75px);
                     display: block;
@@ -108,11 +108,11 @@
                     text-align: center;
                     width: 150px;
                 }
-                
-                &.app-home-test-mmse::after { content: '\e879'; }
+
+                &.app-home-test-mmse::after { content: '\e859'; }
                 &.app-home-test-horloge::after { content: '\e890'; }
-                &.app-home-test-dubois::after { content: '\e8fb'; }
-                &.app-home-test-lawton::after { content: '\e8e9'; }
+                &.app-home-test-dubois::after { content: '\e88a'; }
+                &.app-home-test-lawton::after { content: '\e92b'; }
             }
         }
     }
