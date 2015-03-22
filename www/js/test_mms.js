@@ -11,35 +11,45 @@ var test_mms = (function () {
                 description: "Pour savoir si on sait où qu'on est",
                 questions: [
                     {
-                        title: "En quelle année sommes-nous ?",
-                        description: "Indice : ce n'est pas 1918"
+                        title: 'Orientation temporelle',
+                        questions: [
+                            {
+                                title: "En quelle année sommes-nous ?",
+                                description: "Indice : ce n'est pas 1918"
+                            },
+                            {
+                                title: "En quelle saison ?"
+                            },
+                            {
+                                title: "En quel mois ?"
+                            },
+                            {
+                                title: "Quel jour du mois ?"
+                            },
+                            {
+                                title: "Quel jour de la semaine ?"
+                            }
+                        ]
                     },
                     {
-                        title: "En quelle saison ?"
-                    },
-                    {
-                        title: "En quel mois ?"
-                    },
-                    {
-                        title: "Quel jour du mois ?"
-                    },
-                    {
-                        title: "Quel jour de la semaine ?"
-                    },
-                    {
-                        title: "Quel est le nom de la rue où nous sommes ?"
-                    },
-                    {
-                        title: "Dans quelle ville se trouve-t-elle ?"
-                    },
-                    {
-                        title: "Quel est le nom du département dans lequel se situe cette ville ?"
-                    },
-                    {
-                        title: "Dans quelle région est située ce département ?"
-                    },
-                    {
-                        title: "À quel étage sommes-nous ici ?"
+                        title: 'Orientation spatiale',
+                        questions: [
+                            {
+                                title: "Quel est le nom de la rue où nous sommes ?"
+                            },
+                            {
+                                title: "Dans quelle ville se trouve-t-elle ?"
+                            },
+                            {
+                                title: "Quel est le nom du département dans lequel se situe cette ville ?"
+                            },
+                            {
+                                title: "Dans quelle région est située ce département ?"
+                            },
+                            {
+                                title: "À quel étage sommes-nous ici ?"
+                            }
+                        ]
                     }
                 ]
             },
@@ -48,13 +58,15 @@ var test_mms = (function () {
                 description: "",
                 questions: [
                     {
-                        title: "Test"
+                        title: "Test",
+                        description: "Description"
                     }
                 ]
             }
         ],
         nbQuestions = 0,
-        curNbQuestion = 1;
+        curNbQuestion = 1,
+        totalScore = 0;
     function showQuestion(question, subQuestion) {
         curQuestion = question;
         curSubQuestion = subQuestion;
@@ -68,36 +80,45 @@ var test_mms = (function () {
             $('#test_mms_question').hide();
             $('#test_mms_intro').show();
         } else {
+            $('#test_mms_question_title').text(questions[question].questions[subQuestion - 1].title);
             if (questions[question].questions[subQuestion - 1].description) {
                 $('#test_mms_question_text').text(questions[question].questions[subQuestion - 1].description);
             } else {
                 $('#test_mms_question_text').empty();
             }
-            $('#test_mms_question_title').text(questions[question].questions[subQuestion - 1].title);
+            $('#multiple_questions').empty();
+            if (questions[question].questions[subQuestion - 1].questions) {
+                $('#single_question').hide();
+                $(questions[question].questions[subQuestion - 1].questions).each(function (i, subsubquestion) {
+                    $('#multiple_questions').append('<label>' + subsubquestion.title + '<input class="text_mms_check" type="checkbox" /></label>');
+                });
+                $('#multiple_questions').show();
+            } else {
+                $('#single_question').show();
+                $('#multiple_questions').hide();
+            }
             $('#test_mms_question').show();
             $('#test_mms_intro').hide();
         }
     }
     function nextQuestion() {
         var nextSubQuestion = curSubQuestion + 1,
-            $text_mms_check = $('#text_mms_check');
+            $text_mms_check = $('.text_mms_check');
         if (questions[curQuestion].questions[nextSubQuestion - 1] || questions[curQuestion + 1]) {
             if (questions[curQuestion].questions[nextSubQuestion - 1]) {
                 showQuestion(curQuestion, nextSubQuestion);
                 $('#test_mms_progress').css('width', ((curNbQuestion / nbQuestions) * 100) + '%');
                 $('#test_mms_curquestion').text(curNbQuestion);
                 curNbQuestion += 1;
-                if ($text_mms_check.prop('checked')) {
-                    score += 1;
-                    $text_mms_check.prop('checked', false);
-                }
+                score += $text_mms_check.filter(":checked").size();
+                $text_mms_check.prop('checked', false);
             } else {
                 showQuestion(curQuestion + 1, 0);
             }
         } else {
             $('#test_mms_question, #test_mms_intro, #test_mms_footer').hide();
             $('#test_mms_results').show();
-            $('#test_mms_results_score').text(score + ' / ' + nbQuestions);
+            $('#test_mms_results_score').text(score + ' / ' + totalScore);
             localforage.setItem(Date.now().toString(), {
                 test: 'mms',
                 score: score
@@ -117,6 +138,13 @@ var test_mms = (function () {
             $(questions).each(function (i, question) {
                 $(question.questions).each(function (i, subQuestion) {
                     nbQuestions += 1;
+                    if (subQuestion.questions) {
+                        $(subQuestion.questions).each(function (i, subsubQuestion) {
+                            totalScore += 1;
+                        });
+                    } else {
+                        totalScore += 1;
+                    }
                 });
             });
             $('#test_mms_nbquestions').text(nbQuestions);
