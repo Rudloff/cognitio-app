@@ -9,6 +9,13 @@
  * */
 
 .app-test {
+    .app-test-desc {
+        h2 {
+            font-size:2em;
+            font-weight:bold;
+            margin-bottom:0.5em;
+        }
+    }
     .app-btn-begin {
         position: absolute; top: calc(50% - 35px); left: calc(50% - 125px);
         display: inline-block;
@@ -22,8 +29,14 @@
         width: 250px;
     }
     
+    #test_mms_intro_text {
+        position: absolute; top: calc(50% + 2em); left: 0; right:0;
+        width:80%;
+        margin:auto;
+    }
+    
     #test_mms_intro_title {
-        position: absolute; top: calc(50% - .75em); left: 0;
+        position: absolute; top: calc(50% - 2em); left: 0;
         display: block;
         color: $red;
         font-size: 45px;
@@ -33,13 +46,33 @@
         width: 100%;
     }
     
+    #test_mms_question {
+        width:80%;
+        margin:auto;
+        text-align:center;
+    }
+    
     #test_mms_question_title {
         color: $darkGrey;
         font-size: 30px;
         font-weight: 600;
         line-height: 45px;
         padding-top: 1.5em;
+        padding-bottom:1em;
         text-align: center;
+    }
+    
+    #multiple_questions {
+        padding:1em;
+        text-align:left;
+        max-width:500px;
+        margin:auto;
+        display:inline-block;
+    }
+    
+    #multiple_questions input {
+        float:right;
+        margin-left:1em;
     }
     
     .ui-checkbox {
