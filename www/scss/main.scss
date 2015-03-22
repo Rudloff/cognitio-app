@@ -56,8 +56,12 @@ body {
     font-size: $size;
     height: 100%;
     margin: 0;
-    padding: 85px 0 0 0;
+    padding: 0;
     width: 100%;
+}
+
+div.ui-page {
+    padding: 85px 0 0 0;
 }
 
 
