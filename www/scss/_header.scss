@@ -46,10 +46,47 @@
         }
     }
     
+    .app-header-title {
+        color: $white;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 85px;
+        margin: 0;
+        padding: 0 0 0 100px;
+        text-align: left;
+    }
+    
     .app-profil {
         position: absolute; top: 0; right: 0;
         display: block;
         height: 85px;
-        width: 200px;
+        padding: 0 30px 0 95px;
+        width: auto;
+        
+        .app-profil-avatar {
+            position: absolute; top: 10px; left: 10px;
+            display: block;
+            border-radius: 50%;
+            height: 65px;
+            width: 65px;
+        }
+        
+        .app-profil-name {
+            display: block;
+            color: $white;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 60px;
+            min-width: 150px;
+        }
+        
+        .app-profils-link {
+            position: absolute; bottom: 0; left: 95px;
+            display: inline-block;
+            color: $white;
+            font-size: $size;
+            line-height: 50px;
+            text-decoration: underline;
+        }
     }
 }
