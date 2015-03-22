@@ -9,15 +9,19 @@
  * */
 
 .app-home{
-  width:100%;
+  height: 550px; // use % : todo
   font-size: 0;
   vertical-align: top;
+  width:100%;
 
   .app-home-left{
-    width:33%;
     display: inline-block;
     font-size:$size;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
     vertical-align: top;
+    width:33%;
 
     background-color:$green;
 
@@ -28,22 +32,31 @@
       padding-bottom: 70px;
 
       &::before{
+        width: 50px;
+        height:50px;
         display: block;
-        position: absolute;
+        position: absolute; height: 50px; top:30px;
+        background-color: $blue;
+        border-radius:50%;
         content:" ";
+        left:calc(50%-25px);
       }
 
       &::after{
         display: block;
         position: absolute;
-        content:"\e8bc";
+        content:"\e8dc";
+        font-family: $icofont;
+        font-size: 35px;
       }
     }
   }
 
   .app-home-right{
-    width:66%;
     display: inline-block;
+    width:66%;
+    height: 100%;
+    min-height: 100%;
     font-size:$size;
     vertical-align: top;
 
@@ -53,7 +66,7 @@
     margin-right:auto;
 
     .app-home-test{
-      width:120%;
+      width:100%;
       display: block;
       font-size:0;
       vertical-align: top;
@@ -63,7 +76,7 @@
         display: inline-block;
         font-size:$size;
 
-        padding-bottom: 20px;
+        padding-bottom: 60px;
 
         &::before{
           display: block;
@@ -74,27 +87,33 @@
         &::after{
           display: block;
           position: absolute;
-          content:"\e8bc";
+          content:"\e879"; //mmse
+          font-family: $icofont;
+          font-size: 35px;
         }
       }
 
       .app-home-test2{
         width:50%;
         display: inline-block;
+        padding-bottom: 60px;
         font-size:$size;
 
-        padding-bottom: 20px;
 
         &::before{
           display: block;
           position: absolute;
           content:" ";
+
+          padding-bottom: 60px;
         }
 
         &::after{
           display: block;
           position: absolute;
-          content:"\e8bc";
+          content:"\e890"; //horloge
+          font-family: $icofont;
+          font-size: 35px;
         }
 
       }
@@ -103,7 +122,7 @@
         display: inline-block;
         font-size:$size;
 
-        padding-bottom: 20px;
+        padding-bottom: 60px;
 
         &::before{
           display: block;
@@ -114,7 +133,9 @@
         &::after{
           display: block;
           position: absolute;
-          content:"\e8bc";
+          content:"\e8fb"; //test dubois
+          font-family: $icofont;
+          font-size: 35px;
         }
       }
       .app-home-test4{
@@ -122,18 +143,20 @@
         display: inline-block;
         font-size:$size;
 
-        padding-bottom: 20px;
+        padding-bottom: 60px;
 
         &::before{
           display: block;
-          position: absolute;
           content:" ";
+          position: absolute;
         }
 
         &::after{
           display: block;
           position: absolute;
-          content:"\e8bc";
+          content:"\e8e9"; //test lawton
+          font-family: $icofont;
+          font-size: 35px;
         }
       }
     }
@@ -142,6 +165,8 @@
 
 .app-home-footer{
   width:100%;
+  position:fixed; left:0px; bottom:0px; height: 85px;
+  margin-height: 85px;
   background-color:$grey;
   button{
     width:25%;
