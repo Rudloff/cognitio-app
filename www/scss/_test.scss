@@ -30,9 +30,10 @@
     }
     
     #test_mms_intro_text {
-        position: absolute; top: calc(50% + 2em); left: 0; right:0;
+        position: absolute; top: calc(50%); left: 0; right:0;
         width:80%;
         margin:auto;
+        text-align:center;
     }
     
     #test_mms_intro_title {
