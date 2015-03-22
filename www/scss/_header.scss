@@ -9,5 +9,84 @@
  * */
 
 .ui-header {
+    position: fixed; top: 0; left: 0;
+    background-color: $blue;
     border: 0;
+    height: 85px;
+    width: 100%;
+    z-index: 100;
+    
+    .app-btn-menu {
+        position: absolute; top: 0; left: 0;
+        display: block;
+        font-size: 0;
+        height: 85px;
+        padding: 0;
+        width: 85px;
+        z-index: 150;
+        
+        @extend .nostyle;
+        
+        &:hover {
+            background-color: rgba($white, .15);
+        }
+        
+        &::after {
+            position: absolute; top: 0; left: 0;
+            display: block;
+            color: $white;
+            content: '\e817';
+            font-family: $icofont;
+            font-size: 35px;
+            height: 85px;
+            line-height: 85px;
+            text-align: center;
+            width: 85px;
+            z-index: 200;
+        }
+    }
+    
+    .app-header-title {
+        color: $white;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 85px;
+        margin: 0;
+        padding: 0 0 0 100px;
+        text-align: left;
+    }
+    
+    .app-profil {
+        position: absolute; top: 0; right: 0;
+        display: block;
+        height: 85px;
+        padding: 0 30px 0 95px;
+        width: auto;
+        
+        .app-profil-avatar {
+            position: absolute; top: 10px; left: 10px;
+            display: block;
+            border-radius: 50%;
+            height: 65px;
+            width: 65px;
+        }
+        
+        .app-profil-name {
+            display: block;
+            color: $white;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 60px;
+            min-width: 150px;
+        }
+        
+        .app-profils-link {
+            position: absolute; bottom: 0; left: 95px;
+            display: inline-block;
+            color: $white;
+            font-size: $size;
+            line-height: 50px;
+            text-decoration: underline;
+        }
+    }
 }
