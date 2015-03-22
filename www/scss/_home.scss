@@ -1,6 +1,6 @@
 /**
  * Cognitio homepage SASS stylesheet
- * 
+ *
  * @package     Cognitio
  * @author      Derek Salmon <derek.salmon.fr@gmail.com>
  * @copyright   2015 Cognitio
@@ -8,3 +8,144 @@
  * @link        https://github.com/Rudloff/cognitio-app
  * */
 
+.app-home{
+  width:100%;
+  font-size: 0;
+  vertical-align: top;
+
+  .app-home-left{
+    width:33%;
+    display: inline-block;
+    font-size:$size;
+    vertical-align: top;
+
+    background-color:$green;
+
+    border-right: 3px solid red;
+
+    .app-home-diag{
+      position: relative;
+      padding-bottom: 70px;
+
+      &::before{
+        display: block;
+        position: absolute;
+        content:" ";
+      }
+
+      &::after{
+        display: block;
+        position: absolute;
+        content:"\e8bc";
+      }
+    }
+  }
+
+  .app-home-right{
+    width:66%;
+    display: inline-block;
+    font-size:$size;
+    vertical-align: top;
+
+    background-color:$red;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    .app-home-test{
+      width:120%;
+      display: block;
+      font-size:0;
+      vertical-align: top;
+
+      .app-home-test1{
+        width:50%;
+        display: inline-block;
+        font-size:$size;
+
+        padding-bottom: 20px;
+
+        &::before{
+          display: block;
+          position: absolute;
+          content:" ";
+        }
+
+        &::after{
+          display: block;
+          position: absolute;
+          content:"\e8bc";
+        }
+      }
+
+      .app-home-test2{
+        width:50%;
+        display: inline-block;
+        font-size:$size;
+
+        padding-bottom: 20px;
+
+        &::before{
+          display: block;
+          position: absolute;
+          content:" ";
+        }
+
+        &::after{
+          display: block;
+          position: absolute;
+          content:"\e8bc";
+        }
+
+      }
+      .app-home-test3{
+        width:50%;
+        display: inline-block;
+        font-size:$size;
+
+        padding-bottom: 20px;
+
+        &::before{
+          display: block;
+          position: absolute;
+          content:" ";
+        }
+
+        &::after{
+          display: block;
+          position: absolute;
+          content:"\e8bc";
+        }
+      }
+      .app-home-test4{
+        width:50%;
+        display: inline-block;
+        font-size:$size;
+
+        padding-bottom: 20px;
+
+        &::before{
+          display: block;
+          position: absolute;
+          content:" ";
+        }
+
+        &::after{
+          display: block;
+          position: absolute;
+          content:"\e8bc";
+        }
+      }
+    }
+  }
+}
+
+.app-home-footer{
+  width:100%;
+  background-color:$grey;
+  button{
+    width:25%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
