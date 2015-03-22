@@ -8,170 +8,123 @@
  * @link        https://github.com/Rudloff/cognitio-app
  * */
 
-.app-home{
-  height: 550px; // use % : todo
-  font-size: 0;
-  vertical-align: top;
-  width:100%;
-
-  .app-home-left{
-    display: inline-block;
-    font-size:$size;
+.app-home {
+    font-size: 0;
     height: 100%;
-    min-height: 100%;
-    position: relative;
-    vertical-align: top;
-    width:33%;
-
-    border-right: 3px solid red;
-
-    .app-home-diag{
-      position: relative; top: 25%;
-      padding-bottom: 70px;
-      height:200px;
-      line-height:200px;
-      border: 1px solid red;
-
-
-      &::before{
-        position: absolute; top:30px;
-        display: block;
-        width: 50px;
-        height:50px;
-        background-color: $blue;
-        border-radius:50%;
-        content:" ";
-        left:calc(50%-25px);
-      }
-
-      &::after{
-        display: block; top: 30px;
-        position: absolute;
-        content:"\e8dc";
-        font-family: $icofont;
-        font-size: 35px;
-      }
+    width: 100%;
+    
+    .app-home-left {
+        display: inline-block;
+        font-size: $size;
+        height: 100%;
+        position: relative;
+        vertical-align: top;
+        width: 33%;
+        
+        .app-home-diag {
+            position: relative; top: calc(50% - 118px);
+            padding-top: 185px;
+            text-align: center;
+            
+            &::before {
+                position: absolute; top: 10px; left: calc(50% - 75px);
+                display: block;
+                background-color: $red;
+                border-radius: 50%;
+                content: '';
+                padding: 0;
+                height: 150px;
+                width: 150px;
+            }
+            
+            &::after {
+                position: absolute; top: 10px; left: calc(50% - 75px);
+                display: block;
+                color: $white;
+                content: '\e8dc';
+                font-family: $icofont;
+                font-size: 75px;
+                padding: 0;
+                height: 150px;
+                line-height: 150px;
+                text-align: center;
+                width: 150px;
+            }
+            
+            strong {
+                color: $darkGrey;
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 35px;
+            }
+        }
     }
-  }
 
-  .app-home-right{
-    display: inline-block;
-    width:66%;
-    height: 100%;
-    min-height: 100%;
-    font-size:$size;
-    vertical-align: top;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    .app-home-test{
-      width:100%;
-      top: 25%;
-      display: block;
-      font-size:0;
-      vertical-align: top;
-
-      .app-home-test1{
-        width:50%;
+    .app-home-right {
         display: inline-block;
-        font-size:$size;
-
-        padding-bottom: 60px;
-
-        &::before{
-          display: block;
-          position: absolute;
-          content:" ";
+        font-size: 0;
+        height: 100%;
+        width:66%;
+        
+        .app-home-test {
+            position: relative;
+            display: inline-block;
+            font-size: $size;
+            height: 50%;
+            width: 50%;
+            
+            strong {
+                position: absolute; top: calc(50% - 110px);
+                display: block;
+                color: $darkGrey;
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 35px;
+                padding-top: 185px;
+                text-align: center;
+                width: 100%;
+                
+                &::before {
+                    position: absolute; top: 10px; left: calc(50% - 75px);
+                    display: block;
+                    background-color: $blue;
+                    border-radius: 50%;
+                    content: '';
+                    padding: 0;
+                    height: 150px;
+                    width: 150px;
+                }
+                
+                &::after {
+                    position: absolute; top: 10px; left: calc(50% - 75px);
+                    display: block;
+                    color: $white;
+                    font-family: $icofont;
+                    font-size: 75px;
+                    padding: 0;
+                    height: 150px;
+                    line-height: 150px;
+                    text-align: center;
+                    width: 150px;
+                }
+                
+                &.app-home-test-mmse::after { content: '\e879'; }
+                &.app-home-test-horloge::after { content: '\e890'; }
+                &.app-home-test-dubois::after { content: '\e8fb'; }
+                &.app-home-test-lawton::after { content: '\e8e9'; }
+            }
         }
-
-        &::after{
-          display: block;
-          position: absolute;
-          content:"\e879"; //mmse
-          font-family: $icofont;
-          font-size: 35px;
-        }
-      }
-
-      .app-home-test2{
-        width:50%;
-        display: inline-block;
-        padding-bottom: 60px;
-        font-size:$size;
-
-        &::before{
-          display: block;
-          position: absolute;
-          content:" ";
-
-          padding-bottom: 60px;
-        }
-
-        &::after{
-          display: block;
-          position: absolute;
-          content:"\e890"; //horloge
-          font-family: $icofont;
-          font-size: 35px;
-        }
-
-      }
-      .app-home-test3{
-        width:50%;
-        display: inline-block;
-        font-size:$size;
-
-        padding-bottom: 60px;
-
-        &::before{
-          display: block;
-          position: absolute;
-          content:" ";
-        }
-
-        &::after{
-          display: block;
-          position: absolute;
-          content:"\e8fb"; //test dubois
-          font-family: $icofont;
-          font-size: 35px;
-        }
-      }
-      .app-home-test4{
-        width:50%;
-        display: inline-block;
-        font-size:$size;
-
-        padding-bottom: 60px;
-
-        &::before{
-          display: block;
-          content:" ";
-          position: absolute;
-        }
-
-        &::after{
-          display: block;
-          position: absolute;
-          content:"\e8e9"; //test lawton
-          font-family: $icofont;
-          font-size: 35px;
-        }
-      }
     }
-  }
 }
-
 .app-home-footer{
-  width:100%;
-  position:fixed; left:0px; bottom:0px;
-  height: 85px;
-  margin-height: 85px;
-  background-color:$grey;
-  button{
-    width:25%;
-    margin-left:auto;
-    margin-right:auto;
-  }
+    width:100%;
+    position:fixed; left:0px; bottom:0px;
+    height: 85px;
+    margin-height: 85px;
+    background-color:$grey;
+    button{
+        width:25%;
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
