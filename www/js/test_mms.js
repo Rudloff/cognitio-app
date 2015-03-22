@@ -195,16 +195,16 @@ var test_mms = (function () {
             } else {
                 $('#test_mms_question_text').empty();
             }
-            $('#multiple_questions').empty();
+            $('#test_mms_multiple_questions').empty();
             if (questions[question].questions[subQuestion - 1].questions) {
-                $('#single_question').hide();
+                $('#test_mms_single_question').hide();
                 $(questions[question].questions[subQuestion - 1].questions).each(function (i, subsubquestion) {
-                    $('#multiple_questions').append('<label>' + subsubquestion.title + '<input class="text_mms_check" type="checkbox" /></label>');
+                    $('#test_mms_multiple_questions').append('<label>' + subsubquestion.title + '<input class="text_mms_check" type="checkbox" /></label>');
                 });
-                $('#multiple_questions').show();
+                $('#test_mms_multiple_questions').show();
             } else {
-                $('#single_question').show();
-                $('#multiple_questions').hide();
+                $('#test_mms_single_question').show();
+                $('#test_mms_multiple_questions').hide();
             }
             $('#test_mms_question').show();
             $('#test_mms_intro').hide();
