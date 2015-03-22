@@ -1,0 +1,43 @@
+/**
+ * Cognitio footer SASS stylesheet
+ * 
+ * @package     Cognitio
+ * @author      Damien Senger <hi@hiwelo.co>
+ * @copyright   2015 Cognitio
+ * @license     Private use only
+ * @link        https://github.com/Rudloff/cognitio-app
+ * */
+
+.ui-footer {
+    position: fixed; bottom: 0; left: 0;
+    border: 0;
+    height: 85px;
+    width: 100%;
+    
+    .app-btn-next {
+        position: absolute; bottom: 10px; right: 15px;
+        display: block;
+        background-color: $blue;
+        border-radius: .5em;
+        box-sizing: border-box;
+        color: $white;
+        font-size: 20px;
+        font-weight: 600;
+        height: 65px;
+        line-height: 45px;
+        margin: 0;
+        padding: 10px 30px;
+        text-align: center;
+        width: auto;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+    .app-progress-block {
+        line-height: 85px;
+        text-align: center;
+        width: 100%;
+    }
+}
