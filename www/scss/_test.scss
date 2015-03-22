@@ -8,3 +8,17 @@
  * @link        https://github.com/Rudloff/cognitio-app
  * */
 
+.app-test {
+    .app-btn-begin {
+        position: absolute; top: calc(50% - 35px); left: calc(50% - 125px);
+        display: inline-block;
+        background-color: $red;
+        border-radius: .5em;
+        box-shadow: border-box;
+        color: $white;
+        font-size: 24px;
+        line-height: 36px;
+        text-decoration: none;
+        width: 250px;
+    }
+}
