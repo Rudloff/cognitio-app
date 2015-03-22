@@ -1,4 +1,4 @@
-/*global $*/
+/*global $, localforage*/
 /*jslint browser: true*/
 //Configuration de jQuery Mobile
 $(document).on(
