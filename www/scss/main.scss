@@ -61,6 +61,25 @@ body {
 
 /** Generic tags **/
 
+a {
+    color: $red;
+    text-decoration: none;
+    
+    &:hover {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    &.nostyle {
+        color: inherit;
+        text-decoration: none;
+        
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
 
 
 /**  Module imports **/
