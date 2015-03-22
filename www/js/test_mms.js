@@ -8,10 +8,11 @@ var test_mms = (function () {
         questions = [
             {
                 title: "Orientation",
-                description: "",
+                description: "Pour savoir si on sait où qu'on est",
                 questions: [
                     {
-                        title: "En quelle année sommes-nous ?"
+                        title: "En quelle année sommes-nous ?",
+                        description: "Indice : ce n'est pas 1918"
                     },
                     {
                         title: "En quelle saison ?"
@@ -59,9 +60,15 @@ var test_mms = (function () {
         curSubQuestion = subQuestion;
         if (subQuestion === 0) {
             $('#test_mms_intro_title').text(questions[question].title);
+            if (questions[question].description) {
+                $('#test_mms_intro_text').text(questions[question].description);
+            }
             $('#test_mms_question').hide();
             $('#test_mms_intro').show();
         } else {
+            if (questions[question].questions[subQuestion - 1].description) {
+                $('#test_mms_question_text').text(questions[question].questions[subQuestion - 1].description);
+            }
             $('#test_mms_question_title').text(questions[question].questions[subQuestion - 1].title);
             $('#test_mms_question').show();
             $('#test_mms_intro').hide();
@@ -87,17 +94,13 @@ var test_mms = (function () {
             $('#test_mms_results').show();
             $('#test_mms_results_score').text(score + ' / ' + nbQuestions);
             localforage.setItem(Date.now().toString(), {
-               test: 'mms',
-               score: score 
-            });
-            console.log(Date.now().toString(), {
-               test: 'mms',
-               score: score 
+                test: 'mms',
+                score: score
             });
         }
     }
     function startTest() {
-        $('#test_mms_start').hide();
+        $('#test_mms_home').hide();
         $('#test_mms_question, #test_mms_footer').show();
         showQuestion(0, 0);
     }

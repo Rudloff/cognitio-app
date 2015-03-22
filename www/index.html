@@ -13,16 +13,16 @@
     <script src="dist/main.js"></script>
 </head>
 <body>
-	<div data-role="page" id="home">
-		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
-			<h1 class="app-header-title">Cognitio</h1>
-			<div class="app-profil">
-    			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
-    			    <strong class="app-profil-name">Papi Daniel du Limousin</strong>
-    			    <a class="app-profils-link" href="#profils">Changer de profil</a>
-			</div>
-		</div>
+        <div data-role="page" id="home">
+                <div data-role="header">
+                        <a class="app-btn-menu" data-role="button" href="#home">Menu</a>
+                        <h1 class="app-header-title">Cognitio</h1>
+                        <div class="app-profil">
+                            <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
+                            <strong class="app-profil-name">Papi Daniel du Limousin</strong>
+                            <a class="app-profils-link" href="#profils">Changer de profil</a>
+                        </div>
+                </div>
         <div class="app-home">
             <div class="app-home-left">
                 <a class="nostyle" href="#">
@@ -55,83 +55,87 @@
             </div>
         </div>
         <div data-role="footer" id="home_footer">
-			<a data-role="button" id="home_btn_analyse" class="app-btn-next btn-home-analyse" href="#stats">Analyse des résultats</a>
-		</div>
-	</div>
-	<div data-role="page" id="menu">
-		<ul data-role="listview">
-			<li><a href="#home">Accueil</a></li>
-			<li><a href="#">Dépistage</a></li>
-			<li><a href="#evaluation">Evaluation</a></li>
-			<li><a href="#stats">Suivi</a></li>
-			<li><a href="#">Exercices</a></li>
-			<li><a href="#">Profil</a></li>
-			<li><a href="#">À propos</a></li>
-		</ul>
-	</div>
-	<div data-role="page" id="evaluation">
-		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
-			<h1 class="app-header-title">Cognitio - Évaluation</h1>
-			<div class="app-profil">
-    			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
-    			    <strong class="app-profil-name">Papi Daniel du Limousin</strong>
-    			    <a class="app-profils-link" href="#profils">Changer de profil</a>
-			</div>
-		</div>
-		<div data-role="content">
-			<ul data-role="listview">
-				<li><a href="#test_mms">MMSE</a></li>
-				<li><a href="#test_clock">Test de l'horloge</a></li>
-				<li><a href="#test_dubois">5 mots de Dubois</a></li>
-				<li><a href="#test_lawton">Échelle de Lawton</a></li>
-			</ul>
-		</div>
-	</div>
-	<div data-role="page" class="app-test" id="test_mms">
-		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
-			<h1 class="app-header-title">Cognitio - Évaluation</h1>
-			<div class="app-profil">
-    			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
-    			    <strong class="app-profil-name">Papi Daniel du Limousin</strong>
-    			    <a class="app-profils-link" href="#profils">Changer de profil</a>
-			</div>
-		</div>
-		<div data-role="content">
-			<div id="test_mms_question">
-				<h2 id="test_mms_question_title"></h2>
-				<p id="test_mms_question_text"></p>
-				<label for="text_mms_check">Réponse correcte</label><input id="text_mms_check" type="checkbox" />
-			</div>
-			<div id="test_mms_intro">
-				<h2 id="test_mms_intro_title"></h2>
-				<p id="test_mms_intro_text"></p>
-			</div>
-			<div id="test_mms_results">
-				<h2>Résultats</h2>
-				<p><span id="test_mms_results_score"></span></p>
-			</div>
-			<a data-role="button" id="test_mms_start" class="app-btn-begin">Démarrer le test</a>
-		</div>
-		<div data-role="footer" id="test_mms_footer">
-			<a data-role="button" id="test_mms_next" class="app-btn-next">Question suivante</a>
-			<div class="app-progress-block">Question <span id="test_mms_curquestion"></span> / <span id="test_mms_nbquestions"></span></div>
-		</div>
-	</div>
-	<div data-role="page" id="stats">
-		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
-			<h1 class="app-header-title">Cognitio - Suivi</h1>
-			<div class="app-profil">
-    			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
-    			    <strong class="app-profil-name">Papi Daniel du Limousin</strong>
-    			    <a class="app-profils-link" href="#profils">Changer de profil</a>
-			</div>
-		</div>
-		<div data-role="content">
-			<canvas id="chart_mms" width="400" height="400"></canvas>
-		</div>
-	</div>
+                        <a data-role="button" id="home_btn_analyse" class="app-btn-next btn-home-analyse" href="#stats">Analyse des résultats</a>
+                </div>
+        </div>
+        <div data-role="page" id="menu">
+                <ul data-role="listview">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#">Dépistage</a></li>
+                        <li><a href="#evaluation">Evaluation</a></li>
+                        <li><a href="#stats">Suivi</a></li>
+                        <li><a href="#">Exercices</a></li>
+                        <li><a href="#">Profil</a></li>
+                        <li><a href="#">À propos</a></li>
+                </ul>
+        </div>
+        <div data-role="page" id="evaluation">
+                <div data-role="header">
+                        <a class="app-btn-menu" data-role="button" href="#home">Menu</a>
+                        <h1 class="app-header-title">Cognitio - Évaluation</h1>
+                        <div class="app-profil">
+                            <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
+                            <strong class="app-profil-name">Papi Daniel du Limousin</strong>
+                            <a class="app-profils-link" href="#profils">Changer de profil</a>
+                        </div>
+                </div>
+                <div data-role="content">
+                        <ul data-role="listview">
+                                <li><a href="#test_mms">MMSE</a></li>
+                                <li><a href="#test_clock">Test de l'horloge</a></li>
+                                <li><a href="#test_dubois">5 mots de Dubois</a></li>
+                                <li><a href="#test_lawton">Échelle de Lawton</a></li>
+                        </ul>
+                </div>
+        </div>
+        <div data-role="page" class="app-test" id="test_mms">
+                <div data-role="header">
+                        <a class="app-btn-menu" data-role="button" href="#home">Menu</a>
+                        <h1 class="app-header-title">Cognitio - Évaluation</h1>
+                        <div class="app-profil">
+                            <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
+                            <strong class="app-profil-name">Papi Daniel du Limousin</strong>
+                            <a class="app-profils-link" href="#profils">Changer de profil</a>
+                        </div>
+                </div>
+                <div data-role="content">
+                        <div id="test_mms_question">
+                                <h2 id="test_mms_question_title"></h2>
+                                <p id="test_mms_question_text"></p>
+                                <label for="text_mms_check">Réponse correcte</label><input id="text_mms_check" type="checkbox" />
+                        </div>
+                        <div id="test_mms_intro">
+                                <h2 id="test_mms_intro_title"></h2>
+                                <p id="test_mms_intro_text"></p>
+                        </div>
+                        <div id="test_mms_results">
+                                <h2>Résultats</h2>
+                                <p><span id="test_mms_results_score"></span></p>
+                        </div>
+                        <div id="test_mms_home">
+                            <h2>MMSE</h2>
+                            <p>Le MMSE est un super test trop top cool</p>
+                            <a data-role="button" id="test_mms_start" class="app-btn-begin">Démarrer le test</a>
+                        </div>
+                </div>
+                <div data-role="footer" id="test_mms_footer">
+                        <a data-role="button" id="test_mms_next" class="app-btn-next">Question suivante</a>
+                        <div class="app-progress-block">Question <span id="test_mms_curquestion"></span> / <span id="test_mms_nbquestions"></span></div>
+                </div>
+        </div>
+        <div data-role="page" id="stats">
+                <div data-role="header">
+                        <a class="app-btn-menu" data-role="button" href="#home">Menu</a>
+                        <h1 class="app-header-title">Cognitio - Suivi</h1>
+                        <div class="app-profil">
+                            <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
+                            <strong class="app-profil-name">Papi Daniel du Limousin</strong>
+                            <a class="app-profils-link" href="#profils">Changer de profil</a>
+                        </div>
+                </div>
+                <div data-role="content">
+                        <canvas id="chart_mms" width="400" height="400"></canvas>
+                </div>
+        </div>
 </body>
 </html>
