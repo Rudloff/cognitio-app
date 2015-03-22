@@ -99,13 +99,10 @@
         display: inline-block;
         padding-bottom: 60px;
         font-size:$size;
-
-
         &::before{
           display: block;
           position: absolute;
           content:" ";
-
           padding-bottom: 60px;
         }
 
