@@ -22,8 +22,7 @@ module.exports = function (grunt) {
                 dev: {
                     options: {
                         style: 'expanded',
-                        compass: false,
-                        sourcemap: true
+                        compass: false
                     },
                     files: {
                         'dist/main.css': ['scss/main.scss']
@@ -32,8 +31,7 @@ module.exports = function (grunt) {
                 dist: {
                     options: {
                         style: 'compressed',
-                        compass: false,
-                        sourcemap: true
+                        compass: false
                     },
                     files: {
                         'dist/main.css': ['scss/main.scss']
