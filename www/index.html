@@ -15,7 +15,7 @@
 <body>
 	<div data-role="page" id="home">
 		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#menu">Menu</a>
+			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
 			<h1 class="app-header-title">Cognitio</h1>
 			<div class="app-profil">
     			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
@@ -25,28 +25,38 @@
 		</div>
         <div class="app-home">
             <div class="app-home-left">
-                <div class="app-home-diag">
-                    <strong>Le test préventif</strong>
-                </div>
+                <a class="nostyle" href="#">
+                    <div class="app-home-diag">
+                        <strong>Le test préventif</strong>
+                    </div>
+                </a>
             </div>
             <div class="app-home-right">
                 <div class="app-home-test">
-                    <strong class="app-home-test-mmse">Le MMSE</strong>
+                    <a class="nostyle" href="#test_mms">
+                        <strong class="app-home-test-mmse">Le MMSE</strong>
+                    </a>
                 </div>
                 <div class="app-home-test">
-                    <strong class="app-home-test-horloge">Le test de l'horloge</strong>
+                    <a class="nostyle" href="#test_clock">
+                        <strong class="app-home-test-horloge">Le test de l'horloge</strong>
+                    </a>
                 </div>
                 <div class="app-home-test">
-                    <strong class="app-home-test-dubois">Le test de Dubois</strong>
+                    <a class="nostyle" href="#test_dubois">
+                        <strong class="app-home-test-dubois">Le test de Dubois</strong>
+                    </a>
                 </div>
                 <div class="app-home-test">
-                    <strong class="app-home-test-lawton">Le test de Lawton</strong>
+                    <a class="nostyle" href="#test_lawton">
+                        <strong class="app-home-test-lawton">Le test de Lawton</strong>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="app-home-footer">
-            <button class="app-home-footer_btn">Analyse</button>
-        </div>
+        <div data-role="footer" id="home_footer">
+			<a data-role="button" id="home_btn_analyse" class="app-btn-next btn-home-analyse" href="#stats">Analyse des résultats</a>
+		</div>
 	</div>
 	<div data-role="page" id="menu">
 		<ul data-role="listview">
@@ -61,7 +71,7 @@
 	</div>
 	<div data-role="page" id="evaluation">
 		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#menu">Menu</a>
+			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
 			<h1 class="app-header-title">Cognitio - Évaluation</h1>
 			<div class="app-profil">
     			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
@@ -80,7 +90,7 @@
 	</div>
 	<div data-role="page" class="app-test" id="test_mms">
 		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#menu">Menu</a>
+			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
 			<h1 class="app-header-title">Cognitio - Évaluation</h1>
 			<div class="app-profil">
     			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">
@@ -111,7 +121,7 @@
 	</div>
 	<div data-role="page" id="stats">
 		<div data-role="header">
-			<a class="app-btn-menu" data-role="button" href="#menu">Menu</a>
+			<a class="app-btn-menu" data-role="button" href="#home">Menu</a>
 			<h1 class="app-header-title">Cognitio - Suivi</h1>
 			<div class="app-profil">
     			    <img class="app-profil-avatar" src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Photo de profil">

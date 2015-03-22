@@ -33,6 +33,10 @@
         &:hover {
             text-decoration: none;
         }
+        
+        &.btn-home-analyse {
+            right: calc(50% - 133px); 
+        }
     }
     
     .app-progress-block {
