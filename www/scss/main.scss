@@ -61,7 +61,11 @@ body {
 }
 
 div.ui-page {
-    padding: 85px 0 0 0;
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 85px 0 85px 0;
+    width: 100%;
 }
 
 
