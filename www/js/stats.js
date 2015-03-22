@@ -8,7 +8,7 @@ var stats = (function () {
             localforage.iterate(function (result, time) {
                 scores.push(result.score);
                 var date = new Date(parseInt(time, 10));
-                labels.push(date.toDateString() + ' ' + date.toLocaleTimeString());
+                labels.push(date.toLocaleDateString() + ' ' + date.toLocaleTimeString());
             }, function () {
                 new Chart(document.getElementById("chart_mms_canvas").getContext("2d")).Line({
                     labels: labels,
