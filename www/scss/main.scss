@@ -10,6 +10,59 @@
  * @link        https://github.com/Rudloff/cognitio-app
  * */
 
+
 /** SASS generic imports **/
+
 @import 'mixins';
 @import 'reset';
+@import 'fonts';
+
+
+/** Fonts import **/
+
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:400,300,400italic,300italic,500,500italic,700,700italic');
+
+
+/** Variables **/
+
+$green:         rgba(192, 242,   2, 1);
+$blue:          rgba(127, 212, 156, 1);
+$red:           rgba(254, 101, 104, 1);
+
+$white:         rgba(255, 255, 255, 1);
+$black:         rgba(  0,   0,   0, 1);
+$lightGrey:     rgba(237, 236, 235, 1);
+$mediumGrey:    rgba(186, 186, 186, 1);
+$grey:          rgba(130, 134, 135, 1);
+$darkerGrey:    rgba( 67,  77,  84, 1);
+$darkGrey:      rgba( 42,  52,  58, 1);
+
+$font:          'Ubuntu', Helvetica, Arial, sans-serif;
+$icofont:       'fontello';
+$size:          '16px';
+
+
+/** Generic styles **/
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+/** Generic tags **/
+
+
+
+/**  Module imports **/
+@import 'home';
+@import 'test';
