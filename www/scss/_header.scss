@@ -9,5 +9,9 @@
  * */
 
 .ui-header {
+    position: fixed; top: 0; left: 0;
+    background-color: $green;
     border: 0;
+    height: 85px;
+    width: 100%;
 }
