@@ -19,6 +19,7 @@
     .app-btn-menu {
         position: absolute; top: 0; left: 0;
         display: block;
+        font-size: 0;
         height: 85px;
         padding: 0;
         width: 85px;
@@ -43,5 +44,12 @@
             width: 85px;
             z-index: 200;
         }
+    }
+    
+    .app-profil {
+        position: absolute; top: 0; right: 0;
+        display: block;
+        height: 85px;
+        width: 200px;
     }
 }
