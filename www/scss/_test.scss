@@ -21,4 +21,38 @@
         text-decoration: none;
         width: 250px;
     }
+    
+    #test_mms_intro_title {
+        position: absolute; top: calc(50% - .75em); 
+        display: block;
+        color: $red;
+        font-size: 45px;
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center;
+        width: 100%;
+    }
+    
+    #test_mms_question_title {
+        color: $darkGrey;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 45px;
+        padding-top: 1.5em;
+        text-align: center;
+    }
+    
+    .ui-checkbox {
+        position: relative;
+        display: block;
+        color: $darkerGrey;
+        margin: 0 auto 1.5em;
+        width: 500px;
+        
+        label {
+            display: block;
+            font-size: 1.33em;
+            line-height: 1.5em;
+        }
+    }
 }
