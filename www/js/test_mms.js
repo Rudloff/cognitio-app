@@ -212,7 +212,9 @@ var test_mms = (function () {
     }
     function nextQuestion() {
         var nextSubQuestion = curSubQuestion + 1,
-            $text_mms_check = $('.text_mms_check');
+            $text_mms_check = $('.text_mms_check'),
+            color,
+            scoreDesc;
         score += $text_mms_check.filter(":checked").size();
         $text_mms_check.prop('checked', false);
         $text_mms_check.filter('[data-role=flipswitch]').flipswitch("refresh");
@@ -228,18 +230,16 @@ var test_mms = (function () {
         } else {
             $('#test_mms_question, #test_mms_intro, #test_mms_footer').hide();
             $('#test_mms_results').show();
-            var color, scoreDesc;
             if (score >= 26) {
                 color = '#88C100';
                 scoreDesc = "Rien d’alarmant pour le moment, cependant si vous avez le moindre doute, parlez-en à votre médecin traitant.";
-            } else if (score >=20) {
+            } else if (score >= 20) {
                 color = '#FF8A00';
                 scoreDesc = "Oups ! Quelques petites questions posent problème, réessayez dans un mois, dans un environnement calme. Cependant si le moindre doute a motivé la réalisation de ce test, parlez-en à votre médecin traitant.";
             } else {
                 color = '#FF003C';
                 scoreDesc = "Plusieurs questions semblent poser problème, il serait nécessaire de consulter votre médecin traitant pour ce motif.";
             }
- 
             $('#test_mms_results_score').html('<div style="background-color:' + color + ';" class="app-score-circle"></div>' + '<p>' + scoreDesc + '</p><p>Rappel : ceci n’est pas un diagnostic de démence mais bien un dépistage de troubles cognitifs. Un diagnostic ne peut être posé que par un médecin, en général après une imagerie cérébrale.</p>');
             localforage.setItem(Date.now().toString(), {
                 test: 'mms',
