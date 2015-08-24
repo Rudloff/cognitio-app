@@ -30,5 +30,6 @@ proguard/
 *.log
 
 ant-build
-platforms/android/assets/
+platforms/android/assets/www/
 platforms/firefoxos/www/
+platforms/browser/www/
