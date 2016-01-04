@@ -55,6 +55,14 @@ module.exports = function (grunt) {
                 Gruntfile: {
                     src: ['Gruntfile.js']
                 }
+            },
+            surge: {
+                'cognitio': {
+                    options: {
+                        project: './',
+                        domain: 'cognitio.surge.sh'
+                    }
+                }
             }
         }
     );
@@ -63,7 +71,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jslint');
+    grunt.loadNpmTasks('grunt-surge');
 
     grunt.registerTask('default', ['uglify', 'sass']);
     grunt.registerTask('lint', ['jslint']);
+    grunt.registerTask('deploy', ['surge']);
 };
